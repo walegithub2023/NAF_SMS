@@ -1,3 +1,95 @@
+<?php
+session_start();
+include('Connection.php');
+include('functions.php');
+
+  $errorMessage = '';
+
+// Validate user input
+if(isset($_POST['login'])) {
+    $svcNo = validate($_POST['svcNo']);
+    $loginPassword = validate($_POST['loginPassword']);
+
+    // Select, query, and fetch records from the database, and compare with user's username and password
+    $loginSQL = "SELECT * FROM users WHERE SVC_NO='$svcNo' && PASSWORD='$loginPassword'";
+    $loginResult = mysqli_query($conn, $loginSQL);
+
+    while($loginFetch = mysqli_fetch_array($loginResult)) {
+        if($loginFetch['SVC_NO'] === $svcNo && $loginFetch['PASSWORD'] === $loginPassword) {
+            // Set session variables
+            $_SESSION['svcNo'] = $loginFetch['SVC_NO'];
+            $_SESSION['password'] = $loginFetch['PASSWORD'];
+            $_SESSION['account'] = $loginFetch['UNIT_CODE'];
+            $_SESSION['userRole'] = $loginFetch['USER_ROLE'];
+            $_SESSION['rank'] = $loginFetch['RANK'];
+            $_SESSION['initials'] = $loginFetch['INITIALS'];
+            $_SESSION['surname'] = $loginFetch['SURNAME'];
+
+              //declare or prepare variables for log_event function
+              $svcNo = $_SESSION['svcNo'];
+              $action = "Login";
+              $description = "$svcNo"." "."Logged in";
+              $unitCode = $_SESSION['account'];
+
+            // Redirect to the appropriate page based on user role
+             if($loginFetch['USER_ROLE'] === "SUPER_ADMIN") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to superAdminHome page  
+              header("Location: SUPER_ADMIN/superAdminHome");
+                exit();
+            }
+            else if($loginFetch['USER_ROLE'] === "SUPER_EDITOR") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to superEditorHome page 
+                header("Location: SUPER_EDITOR/superEditorHome");
+                exit();
+            }
+             else if($loginFetch['USER_ROLE'] === "SUPER_VIEWER") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to superViewerHome page 
+                header("Location: SUPER_VIEWER/superViewerHome");
+                exit();
+            }
+            else if($loginFetch['USER_ROLE'] === "UNIT_ADMIN") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to unitAdminHome page
+                header("Location: UNIT_ADMIN/unitAdminHome");
+                exit();
+            }
+            else if($loginFetch['USER_ROLE'] === "UNIT_EDITOR") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to unitEditorHome page 
+                header("Location: UNIT_EDITOR/unitEditorHome");
+                exit();
+            }
+            else if($loginFetch['USER_ROLE'] === "UNIT_VIEWER") {
+               //call the log_event function
+              log_event($conn, $svcNo, $action, $description, $unitCode);
+              //redirect user to unitViewerHome page 
+                header("Location: UNIT_VIEWER/unitViewerHome");
+                exit();
+            }
+        } else {
+            $error_message = 'Oops! Sorry, Your svc number or Password is Invalid. Please Try Again.';
+        }
+    }
+}
+
+// Function to validate input
+function validate($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,9 +141,9 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="login" class="logo d-flex align-items-center w-auto">
+                <a href="login" class="logo d-flex align-items-center w-auto" style="margin-left:-25px;">
                   <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NAF_SMS</span>
+                  <span class="d-none d-lg-block">NAFSMS</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -64,20 +156,32 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                   <!-- Display the error message if the login attempt fails -->
+  <?php if (!empty($errorMessage)): ?>
+    <div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:100%; text-align:center;
+    font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:9px; border-radius:2px;">
+      <a href="unitAdminNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+      font-family:Arial; text-decoration:none; padding:0px">&times;</a>
+      <?php echo $errorMessage; ?>
+    </div>
+  <?php endif; ?>
+   <!-- error message ends -->
+   
+
+                  <form method="post" action="login" class="row g-3 needs-validation">
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
+                      <label for="yourUsername" class="form-label">Svc no</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="svcNo" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="loginPassword" class="form-control" id="yourPassword"  required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -88,7 +192,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" type="submit" name="login">Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="login">Create an account</a></p>
@@ -125,6 +229,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 

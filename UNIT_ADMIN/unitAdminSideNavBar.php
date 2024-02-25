@@ -3,18 +3,77 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home">
+        <a class="nav-link collapsed" href="unitAdminHome">
           <i class="bi bi-house"></i>
           <span>Home</span>
         </a>
       </li><!-- End Login Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link " href="dashboard">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#dashboard-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-grid"></i><span>Dashboard</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
+        <ul id="dashboard-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="unitAdminSms">
+              <i class="bi bi-circle"></i><span>SMS</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminOpms">
+              <i class="bi bi-circle"></i><span>OPMS</span>
+            </a>
+          </li>
+        </ul>
       </li><!-- End Dashboard Nav -->
+
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#personnel-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Personnel</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="personnel-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="unitAdminAllPers">
+              <i class="bi bi-people"></i><span>All Pers</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminNewPers">
+              <i class="bi bi-circle"></i><span>New Pers</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Personnel Nav -->
+
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#leaveandpass-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-calendar-event"></i><span>Leave/Pass</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="leaveandpass-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="unitAdminLeave">
+              <i class="bi bi-circle"></i><span>Leave</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminNewLeave">
+              <i class="bi bi-circle"></i><span>New Leave</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminPass">
+              <i class="bi bi-circle"></i><span>Pass</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminNewPass">
+              <i class="bi bi-circle"></i><span>New Pass</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Leave & Pass Nav -->
 
 
            <li class="nav-item">
@@ -23,17 +82,17 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="chart1">
+            <a href="unitAdminChart1">
               <i class="bi bi-circle"></i><span>chart1</span>
             </a>
           </li>
           <li>
-            <a href="chart2">
+            <a href="unitAdminChart2">
               <i class="bi bi-circle"></i><span>chart2</span>
             </a>
           </li>
           <li>
-            <a href="chart3">
+            <a href="unitAdminChart3">
               <i class="bi bi-circle"></i><span>chart3</span>
             </a>
           </li>
@@ -41,23 +100,25 @@
       </li><!-- End Charts Nav -->
 
       
+     
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Units</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Comd/Unit</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="units">
-              <i class="bi bi-circle"></i><span>Units</span>
+            <a href="unitAdminCommands">
+              <i class="bi bi-circle"></i><span>Comds</span>
             </a>
           </li>
           <li>
-            <a href="newUnit">
-              <i class="bi bi-circle"></i><span>New Unit</span>
+            <a href="unitAdminUnits">
+              <i class="bi bi-circle"></i><span>Units</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Units Nav -->
+      </li><!-- End Comds & Units Nav -->
+
 
 
             
@@ -87,16 +148,16 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-         <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+         <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="unitAdminUsers">
               <i class="bi bi-circle"></i><span>Users</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="unitAdminNewUser">
               <i class="bi bi-circle"></i><span>New user</span>
             </a>
           </li>
@@ -104,11 +165,19 @@
       </li><!-- End Users Nav -->
 
 
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="unitAdminAuditTrail">
+          <i class="bi bi-journal-bookmark"></i>
+          <span>Audit</span>
+        </a>
+      </li><!-- End AuditTrail Page Nav -->
+
+
 
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="userProfile">
+        <a class="nav-link collapsed" href="unitAdminUserProfile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -122,14 +191,14 @@
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="contact">
+        <a class="nav-link collapsed" href="unitAdminContact">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="logout">
+        <a class="nav-link collapsed" href="../logout">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Logout</span>
         </a>

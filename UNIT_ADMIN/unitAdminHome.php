@@ -1,9 +1,9 @@
-<?php include 'header.php'; ?>
-<?php include 'sideNavBar.php'; ?>
+<?php include 'unitAdminHeader.php'; ?>
+<?php include 'unitAdminSideNavBar.php'; ?>
 
 <main id="main" class="main">
       <div class="row" id="homeHeaderDiv">
-        <p id="homeHeader">NIGERIAN AIR FORCE SAFETY MANAGEMENT SYSTEM</p>
+        <p id="homeHeader">NIGERIAN AIR FORCE UNIT SAFETY AND OPERATIONS MANAGEMENT SYSTEM</p>
       </div>
       <div class="row" id="homeParagraphDiv">
        <p id="homeParagraphText">
@@ -27,4 +27,4 @@
       </div>
 
   </main><!-- End #main -->
-<?php include 'footer.php'; ?>
+ <?php include 'unitAdminFooter.php'; ?>

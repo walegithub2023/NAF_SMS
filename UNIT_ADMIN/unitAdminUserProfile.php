@@ -1,12 +1,13 @@
-<?php include 'header.php';?>
-<?php include 'sideNavBar.php';?>
+<?php include 'unitAdminHeader.php'; ?>
+<?php include 'unitAdminSideNavBar.php'; ?>
+
 <main id="main" class="main">
 
     <div class="pagetitle">
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
           <li class="breadcrumb-item">Users</li>
           <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -20,9 +21,9 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>Kevin Anderson</h2>
-              <h3>Web Designer</h3>
+              <img src="../IMAGES/passportIcon.png" alt="Profile" class="rounded-circle" style="padding:10px; border:1px solid #6c757d;">
+             <h2><?php echo ($_SESSION['svcNo']);?></h2>
+              <h3><?php echo ($_SESSION['initials']);?><?php echo" ";?><?php echo ($_SESSION['surname']);?></h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -293,4 +294,4 @@
     </section>
 
   </main><!-- End #main -->
-<?php include 'footer.php';?>
+  <?php include 'unitAdminFooter.php'; ?>

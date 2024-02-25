@@ -1,7 +1,6 @@
 
-<?php include 'header.php'; ?>
-
-<?php include 'sideNavBar.php'; ?>
+<?php include 'superAdminHeader.php'; ?>
+<?php include 'superAdminSideNavBar.php'; ?>
 
 <main id="main" class="main">
       <div class="row" id="text404div">
@@ -12,4 +11,4 @@
       </div>
 
   </main><!-- End #main -->
-  <?php include 'footer.php'; ?>
+  <?php include 'superAdminFooter.php'; ?>

@@ -1,5 +1,7 @@
-<?php include 'header.php'; ?>
-<?php include 'sideNavBar.php'; ?>
+<?php include 'unitAdminHeader.php'; ?>
+
+<?php include 'unitAdminSideNavBar.php'; ?>
+
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -92,4 +94,4 @@
 
   </main><!-- End #main -->
 
-<?php include 'footer.php'; ?>
+  <?php include 'unitAdminFooter.php'; ?>
