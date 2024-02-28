@@ -43,7 +43,7 @@ include 'unitAdminSideNavBar.php';
             
               <!-- Table with stripped rows -->
             <div class="table-responsive" style="boder">
-              <table class="table datatable table-striped second table-hover" style="text-transform:uppercase; font-size:90%;">
+              <table class="table datatable table-striped second table-hover" style="font-size:90%;">
                 <thead>
                   <tr>
                     <th scope="col">SERIAL</th>

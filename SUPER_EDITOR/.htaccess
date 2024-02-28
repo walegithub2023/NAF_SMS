@@ -3,4 +3,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
-ErrorDocument 404 http://localhost/NAF_SMS/SUPER_EDITOR/superEditor404
+ErrorDocument 404 http://localhost/NAFSMS/SUPER_EDITOR/superEditor404

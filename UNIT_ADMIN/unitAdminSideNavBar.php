@@ -139,7 +139,7 @@
           </li>
            <li>
             <a href="https://mail.airforce.mil.ng">
-              <i class="bi bi-circle"></i><span>New Mail</span>
+              <i class="bi bi-circle"></i><span>NAF Mail</span>
             </a>
           </li>
         </ul>

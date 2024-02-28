@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "naf_sms";
+$dbname = "nafsms";
 
 //Create Connection to the Database
 $conn = new mysqli($servername, $username, $password, $dbname);
