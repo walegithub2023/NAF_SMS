@@ -1,3 +1,12 @@
+<?php 
+// Start the session only if it's not already started
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+// Check if user is not logged in, redirect to login page if they are not
+if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userRole']=='UNIT_ADMIN') {
+?>
 <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
@@ -34,7 +43,7 @@
         </a>
         <ul id="personnel-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="unitAdminAllPers">
+            <a href="unitAdminPers">
               <i class="bi bi-people"></i><span>All Pers</span>
             </a>
           </li>
@@ -53,23 +62,13 @@
         </a>
         <ul id="leaveandpass-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="unitAdminLeave">
-              <i class="bi bi-circle"></i><span>Leave</span>
+            <a href="unitAdminLeaveAndPass">
+              <i class="bi bi-circle"></i><span>Leave & Pass</span>
             </a>
           </li>
           <li>
-            <a href="unitAdminNewLeave">
-              <i class="bi bi-circle"></i><span>New Leave</span>
-            </a>
-          </li>
-           <li>
-            <a href="unitAdminPass">
-              <i class="bi bi-circle"></i><span>Pass</span>
-            </a>
-          </li>
-           <li>
-            <a href="unitAdminNewPass">
-              <i class="bi bi-circle"></i><span>New Pass</span>
+            <a href="unitAdminNewLeaveAndPass">
+              <i class="bi bi-circle"></i><span>New Leave/Pass</span>
             </a>
           </li>
         </ul>
@@ -208,3 +207,10 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+  
+<?php 
+}else{
+    header("Location: ../login");
+    exit();
+}
+?>

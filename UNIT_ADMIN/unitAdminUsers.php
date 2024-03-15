@@ -1,7 +1,8 @@
 
 <?php include('../Connection.php'); ?>
 <?php include 'unitAdminHeader.php'; ?>
-<?php include 'unitAdminSideNavBar.php'; ?>
+<?php include 'unitAdminSideNavBar.php';?>
+<?php include('../functions.php');?>
 
 <?php
     $account = $_SESSION['account'];
@@ -12,14 +13,22 @@
 
 ?>
 
-<main id="main" class="main">
+<main id="main" class="main"
+  style="
+    background-image: url('../IMAGES/img1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    zIndex:-1;
+    "
+>
 
     <div class="pagetitle">
       <h1>USERS</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
+          <li class="breadcrumb-item">Data</li>
           <li class="breadcrumb-item active">Users</li>
         </ol>
       </nav>
@@ -30,7 +39,7 @@
       <div class="row">
         <div class="col-lg-12">
 
-          <div class="card" style="padding-left:50px; padding-right:50px;">
+          <div class="card" style="padding-left:50px; padding-right:50px; border-radius:1px;">
             <div class="card-body">
               <h5 class="card-title">Users</h5>
             
@@ -67,7 +76,32 @@
                 <td><?php echo $userFetch['UNIT_CODE']?></td>
                 <td><a style="color:black" href='unitAdminViewUser?svcNo=<?php echo $userFetch['SVC_NO'];?>' type='submit' id='viewButton'><i class='bi bi-eye' id='viewButton'></i></a></td>
                 <td><a style="color:black" href='unitAdminEditUser?svcNo=<?php echo $userFetch['SVC_NO'];?>' type='submit'><i class='bi bi-pencil' id='editButton'></i></a></td>
-                <td><a style="color:black" href='unitAdminDeleteUser?svcNo=<?php echo $userFetch['SVC_NO'];?>' type='submit' onClick='javascript:return confirm("\nARE YOU SURE YOU WANT TO DELETE THIS USER??? DELETING THIS USER REMOVES THE USER FROM THE DATA BASE. CLICK OK TO DELETE AND CANCEL TO CANCEL .....\n");'><i class='bi bi-trash' id='deleteButton'></i></a></td></tr>
+                <td>
+                 
+                <!-- Basic Modal -->
+                        <a style="color:grey; margin-left:5px; color:black; font-size:;" type="button" data-bs-toggle="modal" data-bs-target="#basicModal"><i class='bi bi-trash' id='deleteButton'></i>
+                    
+                        <div class="modal fade" id="basicModal" tabindex="-1" style="font-size:100%;">
+                          <div class="modal-dialog">
+                            <div class="modal-content" style="border-radius:1px; text-align:justify; padding-left:10px; padding-right:10px;">
+                              <div class="modal-header">
+                                <h5 class="modal-title">UNIT ADMIN DELETE THIS USER</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                Are you sure you want to delete this user??? Deleting this user removes him/her from the database.
+                                Click "CANCEL" to cancel this action, and "DELETE" to delete.
+                              </div>
+                              <div class="modal-footer">
+                                <a type="button" style="border-radius:1px;" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</a>
+                                <a type="submit" href='unitAdminDeleteUser?svcNo=<?php echo $userFetch['SVC_NO'];?>' name="delete" style="border-radius:1px;" class="btn btn-primary">DELETE</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              <!-- End Basic Modal-->
+                </td>
+              </tr>
             <?php
             $serial++;
             }

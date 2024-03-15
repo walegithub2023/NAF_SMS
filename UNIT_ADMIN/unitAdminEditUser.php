@@ -362,7 +362,15 @@ try{
 <?php include 'unitAdminSideNavBar.php';?>
 
    
-<main id="main" class="main">
+<main id="main" class="main"
+   style="
+    background-image: url('../IMAGES/img1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    zIndex:-1;
+    "
+>
     <div class="pagetitle">
       <h1>EDIT USER</h1>
       <nav>
@@ -373,8 +381,8 @@ try{
       </nav>
     </div><!-- End Page Title -->
     <section class="section" id="newUserSection">
-      <div class="row" style="width:99%;">
-           <div class="card"  style="padding:30px;">
+      <div class="row" style="">
+           <div class="card"  style="padding:30px; border-radius:1px;">
             <div class="card-body">
 
                <!-- php block of code to display success, failure or error message starts here -->
@@ -390,40 +398,39 @@ try{
 
               <!-- Multi Columns Form -->
               <form method="post" action="unitAdminEditUser" class="row g-3">
-                 <div class="col-md-6">
+                 <div class="col-md-3">
                   <label for="userRole" class="form-label">User Role</label>
-                  <select id="userRole" name="userRole" class="form-select">
+                  <select id="userRole" name="userRole" class="form-select" style="border-radius:1px;" required>
                     <option value="<?php echo $row['USER_ROLE']; ?>"><?php echo $row['USER_ROLE']; ?></option>
                     <option value="UNIT_ADMIN">UNIT_ADMIN</option>
                     <option value="UNIT_EDITOR">UNIT_EDITOR</option>
                     <option value="UNIT_VIEWER">UNIT_VIEWER</option>
                   </select>
                 </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                   <label for="unit" class="form-label">Unit</label>
-                  <select id="unit" name="unit" class="form-select">
+                  <select id="unit" name="unit" class="form-select" style="border-radius:1px;" required>
                     <option value="<?php echo $row['UNIT_CODE']; ?>"><?php echo $row['UNIT_CODE']; ?></option>
                     <?php
                         $unitSQL = "SELECT * FROM units";
                         $unitResult = mysqli_query($conn, $unitSQL);
                         $totalRecords = mysqli_num_rows($unitResult); 
                         while($unitFetch=mysqli_fetch_assoc($unitResult))
-                        {
-                                                        
+                        {                          
                             $unitCode = $unitFetch['UNIT_CODE'];
-                            $unitName = $unitFetch['UNIT_NAME'];
-                            echo'<option value="'.$unitCode.'">'.$unitName.'</option>';
+                            $unit = $unitFetch['UNIT'];
+                            echo'<option value="'.$unitCode.'">'.$unit.'</option>';
                         }                               
                     ?>          
                   </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <label for="svcNo" class="form-label">Svc No</label>
-                  <input type="text" value="<?php echo $row['SVC_NO']; ?>" name="svcNo" class="form-control" id="svcNo" placeholder="Enter svc no" readonly style="background-color:#f5f8f9;">
+                  <input type="text" style="border-radius:1px;" required value="<?php echo $row['SVC_NO']; ?>" name="svcNo" class="form-control" id="svcNo" placeholder="Enter svc no" readonly style="background-color:#f5f8f9;">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <label for="rank" class="form-label">Rank</label>
-                  <select id="rank" name="rank" class="form-select">
+                  <select id="rank" name="rank" class="form-select" style="border-radius:1px;" required>
                      <option value="<?php echo $row['RANK']; ?>"><?php echo $row['RANK']; ?></option>
                      <option value="AVM">AVM</option>
                      <option value="AIR CDRE">AIR CDRE</option>
@@ -444,21 +451,21 @@ try{
                      <option value="ACW">ACW</option>
                   </select>
                 </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                   <label for="initials" class="form-label">Initials</label>
-                  <input type="text" value="<?php echo $row['INITIALS']; ?>" name="initials" class="form-control" id="initials" placeholder="Enter initials">
+                  <input type="text" style="border-radius:1px;" required value="<?php echo $row['INITIALS']; ?>" name="initials" class="form-control" id="initials" placeholder="Enter initials">
                 </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                   <label for="surname" class="form-label">Surname</label>
-                  <input type="text" value="<?php echo $row['SURNAME']; ?>" name="surname" class="form-control" id="surname" placeholder="Enter surname">
+                  <input type="text" style="border-radius:1px;" required value="<?php echo $row['SURNAME']; ?>" name="surname" class="form-control" id="surname" placeholder="Enter surname">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" value="<?php echo $row['PASSWORD']; ?>" name="password" class="form-control" id="password" placeholder="Enter password">
+                  <input type="password" style="border-radius:1px;" required value="<?php echo $row['PASSWORD']; ?>" name="password" class="form-control" id="password" placeholder="Enter password">
                 </div>
-                  <div class="col-md-6">
+                  <div class="col-md-3">
                   <label for="confirmPassword" class="form-label">Confirm Password</label>
-                  <input type="password" value="<?php echo $row['PASSWORD']; ?>" name="confirmPassword" class="form-control" id="confirmPassword">
+                  <input type="password" style="border-radius:1px;" required value="<?php echo $row['PASSWORD']; ?>" name="confirmPassword" class="form-control" id="confirmPassword">
                 </div>
                 <div class="col-12">
                   <div class="form-check">

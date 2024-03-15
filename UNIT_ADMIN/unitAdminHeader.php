@@ -1,5 +1,11 @@
 <?php 
-session_start();
+// Start the session only if it's not already started
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+// Check if user is not logged in, redirect to login page if they are not
+if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userRole']=='UNIT_ADMIN') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +14,7 @@ session_start();
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>NAFSMS</title>
+  <title>NAFSOMS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -59,13 +65,13 @@ session_start();
     <div class="d-flex align-items-center justify-content-between">
       <a href="unitAdminHome" class="logo d-flex align-items-center">
         <img src="../IMAGES/logo.png" id="nafLogo" alt="">
-        <span class="d-none d-lg-block">NAFSMS</span>
+        <span class="d-none d-lg-block">NAFSOMS</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form method="post" action="unitAdminNewUser" class="search-form d-flex align-items-center">
+      <form method="post" action="" class="search-form d-flex align-items-center">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
@@ -204,7 +210,7 @@ session_start();
               <a href="#">
                 <img src="../IMAGES/logo.png" alt="" class="rounded-circle">
                 <div>
-                   <h4></h4>
+                  <h4></h4>
                   <p></p>
                   <p></p>
                 </div>
@@ -231,7 +237,7 @@ session_start();
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6><?php echo ($_SESSION['svcNo']);?></h6>
-              <span><?php echo ($_SESSION['userRole']);?></span>
+              <span><?php echo ($_SESSION['userRole']);?> : <?php echo ($_SESSION['account']);?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -248,7 +254,7 @@ session_start();
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="../users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -258,7 +264,7 @@ session_start();
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="../pages-faq.html">
+              <a class="dropdown-item d-flex align-items-center" href="">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
@@ -281,3 +287,10 @@ session_start();
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
+  
+<?php 
+}else{
+    header("Location: ../login");
+    exit();
+}
+?>

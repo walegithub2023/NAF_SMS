@@ -2,7 +2,7 @@
 <!-- ======= Footer ======= -->
   <footer id="footer" class="footer" style="background-color:white; color:black; border:1px solid white;">
     <div class="copyright">
-      &copy; Copyright <strong><span>NAFSMS 2024</span></strong>. All Rights Reserved.
+      &copy; Copyright <strong><span>NAFSOMS 2024</span></strong>. All Rights Reserved.
     </div>
     <div class="credits">
       Designed by NAF Alpha Dev.

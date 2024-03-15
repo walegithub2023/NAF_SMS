@@ -1,15 +1,15 @@
 <?php 
 include('../Connection.php');
-include 'unitAdminHeader.php';
-include 'unitAdminSideNavBar.php';
-include('../functions.php');
+include 'superEditorHeader.php';
+include 'superEditorSideNavBar.php';
+include '../functions.php';
 
 
  $successMessage = '';
   $failureMessage = '';
   $errorMessage = '';
 
-     //Collect User Data from inputs
+     //Collect Unit Data from inputs
 
      if(isset($_POST['add'])){
           $userRole = $_POST['userRole'];
@@ -70,7 +70,7 @@ if($password==$confirmPassword){
                 //declare or prepare variables for log_event function
                 $userSvcNo = $_SESSION['svcNo'];
                 $action = "create";
-                $description = "$userSvcNo"." "."created user $svcNo";
+                $description = "$userSvcNo"." "." created a new user with svcNo-> $svcNo, for a unit named $unit ";
                 $account = $_SESSION['account'];
 
                 //call the log_event function
@@ -80,22 +80,22 @@ if($password==$confirmPassword){
     catch(Exception $ex)
             {   
                $failureMessage = 'OOPS...! USER ALREADY EXISTS. ENTER A DIFFERENT NAF NUMBER.';
-               //declare or prepare variables for log_event function
+               
+                    //declare or prepare variables for log_event function
                 $userSvcNo = $_SESSION['svcNo'];
                 $action = "failed attempt";
-                $description = "$userSvcNo"." "."tried creating user $svcNo. The User already existed";
+                $description = "$userSvcNo"." "." tried creating a new user with svcNo-> $svcNo, for a unit named $unit ";
                 $account = $_SESSION['account'];
 
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-     
             }
      }else{
          $errorMessage = 'OOPS...! PASSWORDS UNMATCHED...';
-            //declare or prepare variables for log_event function
+              //declare or prepare variables for log_event function
                 $userSvcNo = $_SESSION['svcNo'];
                 $action = "failed attempt";
-                $description = "$userSvcNo"." "."tried creating user $svcNo. User passwords unmatched";
+                $description = "$userSvcNo"." "." tried creating a new user with svcNo-> $svcNo, for a unit named $unit ";
                 $account = $_SESSION['account'];
 
                 //call the log_event function
@@ -104,35 +104,26 @@ if($password==$confirmPassword){
 }
 ?>
 
-<main id="main" class="main"
-  style="
-    background-image: url('../IMAGES/img1.jpg'); 
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    zIndex:-1;
-    
-"
->
+<main id="main" class="main">
     <div class="pagetitle">
       <h1>NEW USER</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
+          <li class="breadcrumb-item"><a href="superEditorHome">Home</a></li>
           <li class="breadcrumb-item active">New User</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
     <section class="section" id="newUserSection">
-      <div class="row" style="">
-           <div class="card"  style="padding:30px; border-radius:1px;">
+      <div class="row" style="width:99%;">
+           <div class="card"  style="padding:30px;">
             <div class="card-body">
 
       <!-- php block of code to display success, failure or error message starts here -->
       <?php if (!empty($successMessage)): ?>
     <div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:100%; text-align:center;
     font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:9px; border-radius:2px;">
-      <a href="unitAdminNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+      <a href="superEditorNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
       font-family:Arial; text-decoration:none; padding:0px">&times;</a>
       <?php echo $successMessage; ?>
     </div>
@@ -141,7 +132,7 @@ if($password==$confirmPassword){
   <?php if (!empty($failureMessage)): ?>
     <div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:100%; text-align:center;
     font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:9px; border-radius:2px;">
-      <a href="unitAdminNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+      <a href="superEditorNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
       font-family:Arial; text-decoration:none; padding:0px">&times;</a>
       <?php echo $failureMessage; ?>
     </div>
@@ -150,7 +141,7 @@ if($password==$confirmPassword){
   <?php if (!empty($errorMessage)): ?>
     <div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:100%; text-align:center;
     font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:9px; border-radius:2px;">
-      <a href="unitAdminNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+      <a href="superEditorNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
       font-family:Arial; text-decoration:none; padding:0px">&times;</a>
       <?php echo $errorMessage; ?>
     </div>
@@ -160,41 +151,40 @@ if($password==$confirmPassword){
               <h5 class="card-title">New User Form</h5>
 
               <!-- Multi Columns Form -->
-              <form method="post" action="unitAdminNewUser" class="row g-3">
-                 <div class="col-md-3">
+              <form method="post" action="superEditorNewUser" class="row g-3">
+                 <div class="col-md-6">
                   <label for="userRole" class="form-label">User Role</label>
-                  <select id="userRole" name="userRole" class="form-select" style="border-radius:1px;" required>
+                  <select id="userRole" name="userRole" class="form-select">
                     <option value="">Choose User Role...</option>
                     <option value="UNIT_ADMIN">Unit_Admin</option>
                     <option value="UNIT_EDITOR">Unit_Editor</option>
                     <option value="UNIT_VIEWER">Unit_Viewer</option>
                   </select>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                   <label for="unit" class="form-label">Unit</label>
-                  <select id="unit" name="unit" class="form-select" style="border-radius:1px;" required>
+                  <select id="unit" name="unit" class="form-select" required>
+                    <option value="">choose</option>
                     <?php
-                        $account = $_SESSION['account'];
-                        $unitSQL = "SELECT * FROM units WHERE UNIT_CODE = '$account'";
+                        $unitSQL = "SELECT * FROM units";
                         $unitResult = mysqli_query($conn, $unitSQL);
                         $totalRecords = mysqli_num_rows($unitResult); 
                         while($unitFetch=mysqli_fetch_assoc($unitResult))
-                        {
-                                                        
+                        {                            
                             $unitCode = $unitFetch['UNIT_CODE'];
-                            $unit = $unitFetch['UNIT'];
-                            echo'<option value="'.$unitCode.'">'.$unit.'</option>';
+                            $unitName = $unitFetch['UNIT'];
+                            echo'<option value="'.$unitCode.'">'.$unitCode.'</option>';
                         }                               
                     ?>          
                   </select>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <label for="svcNo" class="form-label">Svc No</label>
-                  <input type="text" name="svcNo" class="form-control" id="svcNo" placeholder="Enter svc no" style="border-radius:1px;" required>
+                  <input type="text" name="svcNo" class="form-control" id="svcNo" placeholder="Enter svc no">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <label for="rank" class="form-label">Rank</label>
-                  <select id="rank" name="rank" class="form-select" style="border-radius:1px;" required>
+                  <select id="rank" name="rank" class="form-select">
                     <option value="">Choose Rank...</option>
                      <option value="AVM">AVM</option>
                      <option value="AIR CDRE">AIR CDRE</option>
@@ -215,21 +205,29 @@ if($password==$confirmPassword){
                      <option value="ACW">ACW</option>
                   </select>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                   <label for="initials" class="form-label">Initials</label>
-                  <input type="text" name="initials" class="form-control" id="initials" placeholder="Enter initials" style="border-radius:1px;" required>
+                  <input type="text" name="initials" class="form-control" id="initials" placeholder="Enter initials">
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                   <label for="surname" class="form-label">Surname</label>
-                  <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter surname" style="border-radius:1px;" required>
+                  <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter surname">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" style="border-radius:1px;" required>
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                   <label for="confirmPassword" class="form-label">Confirm Password</label>
-                  <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" style="border-radius:1px;" required>
+                  <input type="password" name="confirmPassword" class="form-control" id="confirmPassword">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
                 </div>
                 <div class="">
                   <button type="submit" name="add" class="btn btn-primary" style="border-radius:2px; width:120px; height:50px">CREATE</button>
@@ -243,4 +241,4 @@ if($password==$confirmPassword){
 
   </main><!-- End #main -->
 
-  <?php include 'unitAdminFooter.php'; ?>
+  <?php include 'superEditorFooter.php'; ?>

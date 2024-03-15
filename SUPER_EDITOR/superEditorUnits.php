@@ -56,7 +56,7 @@
                 <tr id='userRow' style='text-transform: uppercase; font-size:90%;'>
                 <td><?php echo $serial?></td>
                 <td><?php echo $unitFetch['UNIT_CODE']?></td>
-                <td><?php echo $unitFetch['UNIT_NAME']?></td>
+                <td><?php echo $unitFetch['UNIT']?></td>
                 <td><?php echo $unitFetch['COMMAND_CODE']?></td>
                 <td><a style="color:black" href='superEditorViewUnit?unitCode=<?php echo $unitFetch['UNIT_CODE'];?>' type='submit' id='viewButton'><i class='bi bi-eye' id='viewButton'></i></a></td>
                 <td><a style="color:black" href='superEditorEditUnit?unitCode=<?php echo $unitFetch['UNIT_CODE'];?>' type='submit'><i class='bi bi-pencil' id='editButton'></i></a></td>

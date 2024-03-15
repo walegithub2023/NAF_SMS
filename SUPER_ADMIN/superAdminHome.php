@@ -1,30 +1,88 @@
 <?php include 'superAdminHeader.php'; ?>
 <?php include 'superAdminSideNavBar.php'; ?>
 
-<main id="main" class="main">
-      <div class="row" id="homeHeaderDiv">
-        <p id="homeHeader">NIGERIAN AIR FORCE UNIT SAFETY AND OPERATIONS MANAGEMENT SYSTEM</p>
-      </div>
-      <div class="row" id="homeParagraphDiv">
-       <p id="homeParagraphText">
-          Welcome to the Safety Management System for the Nigerian Air Force! We are committed to ensuring the highest levels 
-        of safety and security for our nation's air force personnel, equipment, and operations. Our system serves as a comprehensive
-         resource for all safety-related matters within the Nigerian Air Force, providing valuable information and tools to help our 
-         personnel stay informed, prepared, and safe. Our commitment to safety is rooted in the understanding that a safe working 
-         environment is essential for the effective and efficient operation of the Nigerian Air Force. As such, we have developed 
-         a comprehensive safety management system that is designed to identify, assess, and mitigate potential safety risks across 
-         all aspects of our operations. This system is built on a foundation of clear safety policies, procedures, and guidelines that 
-         are designed to ensure that all personnel understand their roles and responsibilities when it comes to safety. We also place 
-         a strong emphasis on safety training, providing our personnel with the knowledge and skills they need to effectively manage 
-         safety risks in their day-to-day work. This includes training on topics such as aircraft safety, operational safety, and 
-         emergency response. We also provide a range of safety resources, including safety manuals, checklists, and best practices, 
-         to help our personnel stay informed and prepared for any safety-related situation. Additionally, our website offers a secure 
-         and confidential platform for reporting safety concerns, incidents, and hazards. This allows our personnel to quickly and 
-         easily report any safety issues they encounter, ensuring prompt action and resolution. Finally, we regularly update our 
-         website with the latest safety news, alerts, and updates to ensure that our personnel are always aware of any potential 
-         safety risks and can take appropriate action to mitigate them.
-       </p>
-      </div>
+<main id="main" class="main"
+style="
+    background-image: url('../IMAGES/img1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    zIndex:-1;
+    "
+>
+       <div class="pagetitle">
+      <h1>NAFSOMS</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="adminHome">Home</a></li>
+          <li class="breadcrumb-item active">System</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card" style="padding:20px; padding-bottom:40px; border-radius:0px;">
+            <div class="card-body">
+              <p id="" class="text-primary;" style="font-size:220%; color:rgb(1, 41, 112); text-align:center">NIGERIAN AIR FORCE SAFETY & OPERATIONS MANAGEMENT SYSTEM</p>
+              <p style="text-align:justify;">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit 
+                    tristique proin taciti a et.Vestibulum curae fermentum ligula per neque scelerisque ad, integer congue lacinia 
+                    aliquam fames volutpat mus, turpis facilisi eros bibendum nisl tortor.Varius convallis taciti aenean et finibus 
+                    egestas sapien ipsum, conubia ac proin commodo venenatis interdum arcu mollis, nec vel gravida fermentum per velit 
+                    primis.Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit 
+                    tristique proin taciti a et.Vestibulum curae fermentum ligula per neque scelerisque ad, integer congue lacinia 
+                    aliquam fames volutpat mus, turpis facilisi eros bibendum nisl tortor.Varius convallis taciti aenean et finibus 
+                    egestas sapien ipsum, conubia ac proin commodo venenatis interdum arcu mollis, nec vel gravida fermentum per velit 
+                    primis. Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit 
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit 
+                    tristique proin taciti a et.Vestibulum curae fermentum ligula per neque scelerisque ad, integer congue lacinia 
+                    aliquam fames volutpat mus, turpis facilisi eros bibendum nisl tortor.Varius convallis taciti aenean et finibus 
+                    egestas sapien ipsum, conubia ac proin commodo venenatis interdum arcu mollis, nec vel gravida fermentum per velit 
+                    primis. Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit
+          
+              </p>
+
+
+             <!-- Full Screen Modal -->
+              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px; width:30%;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal1">
+                CLICK TO SEE HOW TO USE THE SYSTEM
+              </button>
+
+              <div class="modal fade" id="fullscreenModal1" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">USER MANUAL</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"
+                       style="
+                background-image: url('../IMAGES/img11.png'); 
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+                zIndex:-1;
+                "   
+                >
+                   <!--  modal body goes here -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" style="border-radius:1px;" class="btn btn-primary" data-bs-dismiss="modal">CLOSE</button>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Full Screen Modal-->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main><!-- End #main -->
  <?php include 'superAdminFooter.php'; ?>

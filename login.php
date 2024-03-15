@@ -97,7 +97,7 @@ function validate($data) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
- <title>NAF_SMS</title>
+ <title>NAFSOMS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -133,7 +133,15 @@ function validate($data) {
 <body>
 
   <main>
-    <div class="container-fluid" id="containerDiv" style="background-image: url('IMAGES/img11.jpg'); background-size: cover;">
+    <div class="container-fluid" id="containerDiv" 
+    style="
+font-size:100%;
+background-image: url('IMAGES/img1.jpg'); 
+background-size: cover;
+background-position: center;
+min-height: 100vh;
+zIndex:-1;
+">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
@@ -192,7 +200,7 @@ function validate($data) {
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" name="login">Login</button>
+                      <button style="border-radius:3px;" class="btn btn-primary w-100" type="submit" name="login">Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="login">Create an account</a></p>
