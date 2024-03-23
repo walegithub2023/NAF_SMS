@@ -54,7 +54,7 @@ include('../functions.php');
 
           <div class="card" style="padding:20px; padding-bottom:40px; border-radius:0px;">
             <div class="card-body">
-              <h5 class="card-title">NEW Leave/Pass</h5>
+              <h5 class="card-title">New Leave/Pass</h5>
               <p>
                 To add new leave/pass, click the button below. Fill the form completely and submit.
               </p>

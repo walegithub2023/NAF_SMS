@@ -151,7 +151,7 @@ zIndex:-1;
               <div class="d-flex justify-content-center py-4">
                 <a href="login" class="logo d-flex align-items-center w-auto" style="margin-left:-27px;">
                   <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NAFSMS</span>
+                  <span class="d-none d-lg-block">NAFSOMS</span>
                 </a>
               </div><!-- End Logo -->
 

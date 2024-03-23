@@ -67,9 +67,9 @@ $remark = $_POST['remark'];
     try{
             if ($conn->query($persSQL) == TRUE) {
 
-                $_SESSION["successMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["successMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: #198754; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="unitAdminNewPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+                <a href="unitAdminPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px">&times;</a>
                 NEW PERSONNEL CREATED SUCCESSFULLY......
                 </div>';
@@ -80,15 +80,15 @@ $remark = $_POST['remark'];
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewPers");
+                header("Location: unitAdminPers");
                 exit();
             }else{
 
-                $_SESSION["failureMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["failureMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: #dc3545; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="unitAdminNewPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+                <a href="unitAdminPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-                OOPS...! PERSONNEL ALREADY EXISTS. INPUT A DIFFERENT SVC NO.
+                OOPS...! IT IS EITHER THIS PERS ALREADY EXISTS OR HE/SHE IS NOT IN THIS UNIT. INPUT A DIFFERENT SVC NO.
                 </div>';
                 //declare or prepare variables for log_event function
                 $userSvcNo = $_SESSION['svcNo'];
@@ -97,17 +97,17 @@ $remark = $_POST['remark'];
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewPers");
+                header("Location: unitAdminPers");
                 exit();
             }
         }
     catch(Exception $e)
             {   
-                $_SESSION["errorMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["errorMessageForNewPers"] = '<div class="alert alert-dismissible" style="background-color: #dc3545; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="unitAdminNewPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
+                <a href="unitAdminPers" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-                OOPS...! PERSONNEL ALREADY EXISTS. INPUT A DIFFERENT SVC NO.
+                OOPS...! IT IS EITHER THIS PERS ALREADY EXISTS OR HE/SHE IS NOT IN THIS UNIT. INPUT A DIFFERENT SVC NO.
                 </div>';
                 //declare or prepare variables for log_event function
                 $userSvcNo = $_SESSION['svcNo'];
@@ -116,7 +116,7 @@ $remark = $_POST['remark'];
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewPers");
+                header("Location: unitAdminPers");
                 exit();
      
             }

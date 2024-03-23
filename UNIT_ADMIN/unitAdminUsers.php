@@ -35,6 +35,30 @@
     </div><!-- End Page Title -->
 
 
+    
+         <?php
+                    //MESSAGES FROM successMessageForDeleteUser START HERE
+                    // Check if a successMessageForDeleteUser is set in the session
+                    if (isset($_SESSION['successMessageForDeleteUser'])) {
+                        // Display the successMessageForDeleteUser
+                        echo '<div>' . $_SESSION['successMessageForDeleteUser'] . '</div>';
+
+                        // Unset the successMessageForDeleteUser
+                        unset($_SESSION['successMessageForDeleteUser']);
+            }else
+
+            // Check if a failureMessageForDeleteUser is set in the session
+            if (isset($_SESSION['failureMessageForDeleteUser'])) {
+                        // Display the failure message
+                        echo '<div>' . $_SESSION['failureMessageForDeleteUser'] . '</div>';
+
+                        // Unset the failureMessageForDeleteUser
+                        unset($_SESSION['failureMessageForDeleteUser']);
+            }
+            //MESSAGES FROM failureMessageForDeleteUser END HERE
+    ?>
+
+
    <section class="section">
       <div class="row">
         <div class="col-lg-12">
@@ -45,7 +69,7 @@
             
               <!-- Table with stripped rows -->
             <div class="table-responsive" style="boder">
-              <table class="table datatable table-striped second table-hover" style="text-transform:uppercase; font-size:90%;">
+              <table class="table datatable table-striped second table-hover" style="text-transform:uppercase; font-size:75%;">
                 <thead>
                   <tr>
                     <th scope="col">Serial</th>

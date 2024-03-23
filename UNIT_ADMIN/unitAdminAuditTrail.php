@@ -50,7 +50,7 @@ include 'unitAdminSideNavBar.php';
             
               <!-- Table with stripped rows -->
             <div class="table-responsive" style="boder">
-              <table class="table datatable table-striped second table-hover" style="font-size:90%;">
+              <table class="table datatable table-striped second table-hover" style="font-size:75%;">
                 <thead>
                   <tr>
                     <th scope="col">SERIAL</th>
@@ -68,7 +68,7 @@ include 'unitAdminSideNavBar.php';
                     while($auditFetch=mysqli_fetch_assoc($auditResult))
             {
             ?>
-                <tr id='userRow' style='text-transform: uppercase; font-size:90%;'>
+                <tr id='userRow' style='text-transform: uppercase; font-size:75%;'>
                 <td><?php echo $serial?></td>
                 <td><?php echo $auditFetch['SVC_NO']?></td>
                  <td><?php echo $auditFetch['USER_ROLE']?></td>

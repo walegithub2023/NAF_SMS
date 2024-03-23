@@ -54,9 +54,9 @@ if($endDate > $startDate){
     try{
             if ($conn->query($leavePassSQL) == TRUE) {
 
-                $_SESSION["successMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["successMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: #198754; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;'>
-                <a href='unitAdminNewLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
+                <a href='unitAdminLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px'>&times;</a>
                 YOUR PERS HAS BEEN SENT ON $type SUCCESSFULLY...
                 </div>";
@@ -67,13 +67,13 @@ if($endDate > $startDate){
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewLeaveAndPass");
+                header("Location: unitAdminLeaveAndPass");
                 exit();
             }else{
 
-                $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: #dc3545; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;'>
-                <a href='unitAdminNewLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
+                <a href='unitAdminLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px'>&times;</a>
                 OOPS...! YOUR CREATION OF $type HAS FAILED.
                 </div>";
@@ -84,15 +84,15 @@ if($endDate > $startDate){
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewLeaveAndPass");
+                header("Location: unitAdminLeaveAndPass");
                 exit();
             }
         }
     catch(Exception $e)
             {   
-                $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+                $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: #dc3545; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;'>
-                <a href='unitAdminNewLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
+                <a href='unitAdminLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px'>&times;</a>
                 OOPS...! YOUR CREATION OF $type HAS FAILED.
                 </div>";
@@ -103,15 +103,15 @@ if($endDate > $startDate){
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewLeaveAndPass");
+                header("Location: unitAdminLeaveAndPass");
                 exit();
      
             }
         }
             else{
-               $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
+               $_SESSION["failureMessageForNewLeaveAndPass"] = "<div class='alert alert-dismissible' style='background-color: #dc3545; color:white; font-size:120%; text-align:center;
                 font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;'>
-                <a href='unitAdminNewLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
+                <a href='unitAdminLeaveAndPass' class='close' data-dismiss='alert' aria-label='close' style='color:white; font-size:120%; text-align:left;
                 font-family:Arial; text-decoration:none; padding:0px'>&times;</a>
                 OOPS...! YOUR CREATION OF $type HAS FAILED. YOUR $type END DATE MUST BE GREATER/AFTER THE START DATE.
                 </div>";
@@ -122,7 +122,7 @@ if($endDate > $startDate){
                 $account = $_SESSION['account'];
                 //call the log_event function
                 log_event($conn, $userSvcNo, $action, $description, $account);
-                header("Location: unitAdminNewLeaveAndPass");
+                header("Location: unitAdminLeaveAndPass");
                 exit(); 
             }
 }

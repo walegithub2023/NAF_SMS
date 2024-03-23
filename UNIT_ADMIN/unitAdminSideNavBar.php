@@ -18,61 +18,59 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
         </a>
       </li><!-- End Login Page Nav -->
 
+
         <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#dashboard-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-grid"></i><span>Dashboard</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#sms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-grid"></i><span>SMS</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="dashboard-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <ul id="sms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="unitAdminSms">
-              <i class="bi bi-circle"></i><span>SMS</span>
+              <i class="bi bi-circle"></i><span>Dashboard</span>
             </a>
           </li>
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>...</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End SMS Nav -->
+
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#opms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-grid"></i><span>OPMS</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="opms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
             <a href="unitAdminOpms">
-              <i class="bi bi-circle"></i><span>OPMS</span>
+              <i class="bi bi-circle"></i><span>Dashboard</span>
             </a>
           </li>
-        </ul>
-      </li><!-- End Dashboard Nav -->
-
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#personnel-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>Personnel</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="personnel-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="unitAdminPers">
-              <i class="bi bi-people"></i><span>All Pers</span>
+              <i class="bi bi-circle"></i><span>Personnel</span>
             </a>
           </li>
           <li>
-            <a href="unitAdminNewPers">
-              <i class="bi bi-circle"></i><span>New Pers</span>
+            <a href="unitAdminPdeState">
+              <i class="bi bi-circle"></i><span>Pde State</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminEqptInventory">
+              <i class="bi bi-circle"></i><span>Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminLeaveAndPass">
+              <i class="bi bi-circle"></i><span>Leave/Pass</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Personnel Nav -->
+      </li><!-- End SMS Nav -->
 
-
-        <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#leaveandpass-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-calendar-event"></i><span>Leave/Pass</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="leaveandpass-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="unitAdminLeaveAndPass">
-              <i class="bi bi-circle"></i><span>Leave & Pass</span>
-            </a>
-          </li>
-          <li>
-            <a href="unitAdminNewLeaveAndPass">
-              <i class="bi bi-circle"></i><span>New Leave/Pass</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Leave & Pass Nav -->
 
 
            <li class="nav-item">
@@ -102,17 +100,17 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
      
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Comd/Unit</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-layout-text-window-reverse"></i><span>Others</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="unitAdminCommands">
-              <i class="bi bi-circle"></i><span>Comds</span>
+              <i class="bi bi-circle"></i><span>...</span>
             </a>
           </li>
           <li>
             <a href="unitAdminUnits">
-              <i class="bi bi-circle"></i><span>Units</span>
+              <i class="bi bi-circle"></i><span>...</span>
             </a>
           </li>
         </ul>
@@ -181,13 +179,6 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="help">
-          <i class="bi bi-question-circle"></i>
-          <span>Help</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="unitAdminContact">

@@ -3,7 +3,7 @@
 //Declare Connection Variables
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "wale@password";
 $dbname = "nafsoms";
 
 //Create Connection to the Database
