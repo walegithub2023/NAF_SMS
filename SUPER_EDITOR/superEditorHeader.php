@@ -12,9 +12,9 @@ session_start();
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="../IMAGES/logo.png" rel="icon">
-  <link href="../IMAGES/logo.png" rel="apple-touch-icon">
+ <!-- Favicons -->
+ <link href="../IMAGES/nafsomsLogo.png" rel="icon">
+ <link href="../IMAGES/nafsomsLogo.png" rel="shortcut icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

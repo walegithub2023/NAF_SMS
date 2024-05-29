@@ -24,7 +24,7 @@ $svcNo = $_SESSION['svcNo'];
     "
 >
     <div class="pagetitle">
-      <h1>Profile</h1>
+      <h1 style="font-weight:normal;">Profile</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
@@ -37,13 +37,29 @@ $svcNo = $_SESSION['svcNo'];
        <?php
 
                     // Check if a success message is set in the session
-                    if (isset($_SESSION['successMessageForPasswordChange'])) {
+                    if (isset($_SESSION['successMessageForUserPasswordChange'])) {
                         // Display the success message
-                        echo '<div>' . $_SESSION['successMessageForPasswordChange'] . '</div>';
+                        echo '<div>' . $_SESSION['successMessageForUserPasswordChange'] . '</div>';
 
                         // Unset the success message to prevent it from being displayed again on page reload
-                        unset($_SESSION['successMessageForPasswordChange']);
-            }
+                        unset($_SESSION['successMessageForUserPasswordChange']);
+            }else
+
+            if (isset($_SESSION['passwordMismatchMessageForUserPasswordChange'])) {
+                        // Display the passwordMismatchMessageForUserPasswordChange message
+                        echo '<div>' . $_SESSION['passwordMismatchMessageForUserPasswordChange'] . '</div>';
+
+                        // Unset the passwordMismatchMessageForUserPasswordChange message to prevent it from being displayed again on page reload
+                        unset($_SESSION['passwordMismatchMessageForUserPasswordChange']);
+            }else
+
+            if (isset($_SESSION['incorrectPasswordMessageForUserPasswordChange'])) {
+                        // Display the incorrectPasswordMessageForUserPasswordChange message
+                        echo '<div>' . $_SESSION['incorrectPasswordMessageForUserPasswordChange'] . '</div>';
+
+                        // Unset the incorrectPasswordMessageForUserPasswordChange message to prevent it from being displayed again on page reload
+                        unset($_SESSION['incorrectPasswordMessageForUserPasswordChange']);
+            }else
            
     ?>
 
@@ -57,7 +73,6 @@ $svcNo = $_SESSION['svcNo'];
 
               <img src="../IMAGES/passportIcon.png" alt="Profile" class="rounded-circle" style="padding:10px; border:1px solid #6c757d;">
              <h2><?php echo ($_SESSION['svcNo']);?></h2>
-              <h3><?php echo ($_SESSION['initials']);?><?php echo" ";?><?php echo ($_SESSION['surname']);?></h3>
                <h3><?php echo ($_SESSION['userRole']);?></h3>
             </div>
           </div>
@@ -89,20 +104,7 @@ $svcNo = $_SESSION['svcNo'];
 
                   <h5 class="card-title">Profile Details</h5>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Surname:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["SURNAME"];?></div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Initials:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["INITIALS"];?></div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Rank:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["RANK"];?></div>
-                  </div>
+                 
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Unit:</div>
@@ -118,7 +120,7 @@ $svcNo = $_SESSION['svcNo'];
 
                 <div class="tab-pane fade pt-3" id="profile-change-password" style="padding-bottom:30px;">
                   <!-- Change Password Form -->
-                  <form method="post" action="unitAdminUserProfile">
+                  <form method="post" action="unitAdminProcessUserPasswordChange">
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
@@ -162,77 +164,7 @@ $svcNo = $_SESSION['svcNo'];
 
   </main><!-- End #main -->
 
-   <?php
-if(isset($_POST["change_password"])){
-$password = $_POST["password"];
-$newpassword = $_POST["newpassword"];
-$renewpassword = $_POST["renewpassword"];
-
-
-    //create a function to validate pers input
-        function validate($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-    
- //validate user's password input
-   $newpassword = validate($newpassword);
-
-if($row["PASSWORD"] == $password){
-
- if($newpassword == $renewpassword){
-  
-
-   try{
-
-     $updateSQL = "UPDATE users SET PASSWORD = '$newpassword' WHERE SVC_NO = '$svcNo'";
-     
-    
-    //Check whether record has been updated successfully
-
-    if ($conn->query($updateSQL) !== TRUE) {
-        throw new Exception();
-
-    } else {
-        echo'<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
-                font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="adminUserProfile" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
-                font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-                USER PASSWORD CHANGED SUCCESSFULLY...
-                </div>';
-         //declare or prepare variables for log_event function
-        $userSvcNo = $_SESSION['svcNo'];
-        $action = "password change";
-        $description = "$userSvcNo"." "."changed his/her password";
-        $account = $_SESSION['account'];
-
-        //call the log_event function
-        log_event($conn, $userSvcNo, $action, $description, $account);
-         exit();
-
-    }
-    }catch(Exception $ex){
-        echo "Error: " . $updateSQL . "<br>" . $conn->error;
-    }
-  }else{
-    echo'<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
-                font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="UnitAdminUserProfile" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
-                font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-                PASSWORD MISMATCH. YOUR NEW PASSWORD IS NOT THE SAME WITH YOUR CONFIRM PASSWORD.
-                </div>';
-  }
-}else{
-   echo'<div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:120%; text-align:center;
-                font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:5px; border-radius:2px;">
-                <a href="UnitAdminUserProfile" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
-                font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-                THE USER PASSWORD YOU ENTERED IS NOT CORRECT.
-                </div>';
-}
-}
+<?php
 }
 ?>
   <?php include 'unitAdminFooter.php'; ?>

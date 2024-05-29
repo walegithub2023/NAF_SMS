@@ -3,7 +3,7 @@
 
 <main id="main" class="main"
 style="
-    background-image: url('../IMAGES/img1.jpg'); 
+    background-image: url('../IMAGES/img4.png'); 
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -12,11 +12,11 @@ style="
 >
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1 style="font-weight:normal;">Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active" style="font-weight:normal;">Home</li>
+          <li class="breadcrumb-item active" style="font-weight:normal;">Dashboard</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

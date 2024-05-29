@@ -24,7 +24,7 @@ include('../functions.php');
     >
 
     <div class="pagetitle">
-      <h1>PERSONNEL</h1>
+      <h1 style="font-weight:normal;">PERSONNEL</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="adminHome">Home</a></li>
@@ -111,8 +111,8 @@ include('../functions.php');
 
 
              <!-- Full Screen Modal -->
-              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px; width:30%;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal1">
-                CLICK TO VIEW ALL PERS
+              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal1">
+                CLICK TO VIEW ALL PERSONNEL IN THE DATABASE
               </button>
 
               <div class="modal fade" id="fullscreenModal1" tabindex="-1">
@@ -124,7 +124,7 @@ include('../functions.php');
                     </div>
                     <div class="modal-body"
                        style="
-                background-image: url('../IMAGES/img1.jpg'); 
+                background-image: url('../IMAGES/img11.png'); 
                 background-size: cover;
                 background-position: center;
                 min-height: 100vh;
@@ -133,7 +133,7 @@ include('../functions.php');
                 >
                      <!-- Table with stripped rows -->
             <div class="table-responsive" style="boder">
-              <table class="table datatable table-striped second table-hover" style="text-transform:uppercase; font-size:90%; background-color:white;">
+              <table class="table datatable table-striped second table-hover" style="text-transform:uppercase; font-size:80%; background-color:white;">
                 <thead>
                   <tr>
                     <th scope="col">Ser</th>
@@ -162,7 +162,7 @@ include('../functions.php');
                     while($persFetch=mysqli_fetch_assoc($persResult))
             {
             ?>
-                <tr id='userRow' style='text-transform: uppercase; font-size:90%;'>
+                <tr id='userRow' style='text-transform: uppercase; font-size:80%;'>
                 <td><?php echo $serial?></td>
                 <td><?php echo $persFetch['PERS_TYPE']?></td>
                 <td><?php echo $persFetch['SVC_NO']?></td>
@@ -226,11 +226,12 @@ include('../functions.php');
                <div class="col-md-3">
                   <label for="persType" class="form-label">PERS_TYPE:</label>
                   <select id="persType" name="persType" class="form-select" style="border-radius:2px;" required>
-                        <option value="">..select..</option>
+                        <option value="">choose</option>
                         <option value="OFFR(MALE)">Offr(Male)</option>
                          <option value="OFFR(FEMALE)">Offr(Female)</option>
                         <option value="AIRMAN">Airman</option>
                         <option value="AIRWOMAN">Airwoman</option>
+                        <option value="CIVILIAN">Civilian</option>
                   </select>
                 </div>
                   <div class="col-md-3">
@@ -258,6 +259,10 @@ include('../functions.php');
                             <option value="LCPL">LCPL</option>
                             <option value="ACM">ACM</option>
                             <option value="ACW">ACW</option>
+                            <option value="MR">CIVILIAN(MR)</option>
+                            <option value="MRS">CIVILIAN(MRS)</option>
+                            <option value="MASTER">CIVILIAN(MASTER)</option>
+                            <option value="MISS">CIVILIAN(MISS)</option>
                   </select>
                 </div>
                  <div class="col-md-3">

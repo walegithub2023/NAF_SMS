@@ -2,8 +2,13 @@
 /* function to log or insert event into the audit trail table starts here */
 function log_event($conn, $svcNo, $action, $description, $unitCode) {
 
+
+    //set your default time zone
+    date_default_timezone_set('W. Central Africa Standard Time');
+
     //get the current DateTime
     $dateTime = date('Y-m-d H:i:s');
+
 
     //create audit_id or event for the event
 
@@ -28,4 +33,5 @@ function log_event($conn, $svcNo, $action, $description, $unitCode) {
     }
 }
 /* function to log or insert event into the audit trail table ends */
+
 ?>

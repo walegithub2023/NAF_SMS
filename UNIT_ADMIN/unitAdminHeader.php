@@ -18,13 +18,13 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="../IMAGES/logo.png" rel="icon">
-  <link href="../IMAGES/logo.png" rel="apple-touch-icon">
+ <!-- Favicons -->
+ <link href="../IMAGES/nafsomsLogo.png" rel="icon">
+ <link href="../IMAGES/nafsomsLogo.png" rel="shortcut icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="assets/newCDNfiles/google-fonts.css">
+
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -65,8 +65,8 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="unitAdminHome" class="logo d-flex align-items-center">
-        <img src="../IMAGES/logo.png" id="nafLogo" alt="">
-        <span class="d-none d-lg-block">NAFSOMS</span>
+        <!-- <img src="../IMAGES/logo.png" id="nafLogo" alt=""> -->
+        <span class="d-none d-lg-block" style="font-weight:normal;">NAFSOMS</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -90,46 +90,8 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
 
         <li class="nav-item dropdown">
 
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4></h4>
-                <p></p>
-                <p></p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4></h4>
-                <p></p>
-                <p></p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
+          
             <li class="notification-item">
               <i class="bi bi-check-circle text-success"></i>
               <div>
@@ -163,71 +125,6 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
 
         </li><!-- End Notification Nav -->
 
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../IMAGES/logo.png" alt="" class="rounded-circle">
-                <div>
-                  <h4></h4>
-                  <p></p>
-                  <p></p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../IMAGES/logo.png" alt="" class="rounded-circle">
-                <div>
-                  <h4></h4>
-                  <p></p>
-                  <p></p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../IMAGES/logo.png" alt="" class="rounded-circle">
-                <div>
-                  <h4></h4>
-                  <p></p>
-                  <p></p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
 
         <li class="nav-item dropdown pe-3">
 

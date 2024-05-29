@@ -8,7 +8,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
 if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userRole']=='UNIT_ADMIN') {
 ?>
 <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar" style="">
 
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
@@ -49,6 +49,41 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
             </a>
           </li>
           <li>
+            <a href="unitAdminPlatform">
+              <i class="bi bi-circle"></i><span>Platform</span>
+            </a>
+          </li>
+          <li>
+            <a href="unitAdminAcDailyFgActivity">
+              <i class="bi bi-circle"></i><span>AcDailyFgActy</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminAcFlightReport">
+              <i class="bi bi-circle"></i><span>AcFlightRpt</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminWeather">
+              <i class="bi bi-circle"></i><span>Weather</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminAcDescWorkRecord">
+              <i class="bi bi-circle"></i><span>AcWorkRpt</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminEqptInventory">
+              <i class="bi bi-circle"></i><span>Inventory</span>
+            </a>
+          </li>
+           <li>
+            <a href="unitAdminVehicle">
+              <i class="bi bi-circle"></i><span>Vehicle</span>
+            </a>
+          </li>
+          <li>
             <a href="unitAdminPers">
               <i class="bi bi-circle"></i><span>Personnel</span>
             </a>
@@ -56,11 +91,6 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
           <li>
             <a href="unitAdminPdeState">
               <i class="bi bi-circle"></i><span>Pde State</span>
-            </a>
-          </li>
-          <li>
-            <a href="unitAdminEqptInventory">
-              <i class="bi bi-circle"></i><span>Inventory</span>
             </a>
           </li>
           <li>
@@ -143,22 +173,12 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
       </li><!-- End NAF Apps Nav -->
 
 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-         <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="unitAdminUsers">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="unitAdminUsers">
-              <i class="bi bi-circle"></i><span>Users</span>
-            </a>
-          </li>
-          <li>
-            <a href="unitAdminNewUser">
-              <i class="bi bi-circle"></i><span>New user</span>
-            </a>
-          </li>
-        </ul>
       </li><!-- End Users Nav -->
 
 

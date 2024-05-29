@@ -36,42 +36,42 @@ if(isset($_POST['login'])) {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to superAdminHome page  
-              header("Location: SUPER_ADMIN/superAdminHome");
+              header("Location: super_admin/superAdminHome");
                 exit();
             }
             else if($loginFetch['USER_ROLE'] === "SUPER_EDITOR") {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to superEditorHome page 
-                header("Location: SUPER_EDITOR/superEditorHome");
+                header("Location: super_editor/superEditorHome");
                 exit();
             }
              else if($loginFetch['USER_ROLE'] === "SUPER_VIEWER") {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to superViewerHome page 
-                header("Location: SUPER_VIEWER/superViewerHome");
+                header("Location: super_viewer/superViewerHome");
                 exit();
             }
             else if($loginFetch['USER_ROLE'] === "UNIT_ADMIN") {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to unitAdminHome page
-                header("Location: UNIT_ADMIN/unitAdminHome");
+                header("Location: unit_admin/unitAdminHome");
                 exit();
             }
             else if($loginFetch['USER_ROLE'] === "UNIT_EDITOR") {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to unitEditorHome page 
-                header("Location: UNIT_EDITOR/unitEditorHome");
+                header("Location: unit_editor/unitEditorHome");
                 exit();
             }
             else if($loginFetch['USER_ROLE'] === "UNIT_VIEWER") {
                //call the log_event function
               log_event($conn, $svcNo, $action, $description, $unitCode);
               //redirect user to unitViewerHome page 
-                header("Location: UNIT_VIEWER/unitViewerHome");
+                header("Location: unit_viewer/unitViewerHome");
                 exit();
             }
         } else {
@@ -101,14 +101,13 @@ function validate($data) {
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="IMAGES/logo.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ <!-- Favicons -->
+ <link href="IMAGES/nafsomsLogo.png" rel="icon">
+ <link href="IMAGES/nafsomsLogo.png" rel="shortcut icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/newCDNfiles/google-fonts.css">
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -150,7 +149,7 @@ zIndex:-1;
 
               <div class="d-flex justify-content-center py-4">
                 <a href="login" class="logo d-flex align-items-center w-auto" style="margin-left:-27px;">
-                  <img src="assets/img/logo.png" alt="">
+              
                   <span class="d-none d-lg-block">NAFSOMS</span>
                 </a>
               </div><!-- End Logo -->
@@ -164,16 +163,6 @@ zIndex:-1;
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                   <!-- Display the error message if the login attempt fails -->
-  <?php if (!empty($errorMessage)): ?>
-    <div class="alert alert-dismissible" style="background-color: rgb(7, 102, 219); color:white; font-size:100%; text-align:center;
-    font-family:Arial; margin-bottom:10px; z-index:5; border-radius:1px solid rgb(7, 102, 219); padding:9px; border-radius:2px;">
-      <a href="unitAdminNewUser" class="close" data-dismiss="alert" aria-label="close" style="color:white; font-size:120%; text-align:left;
-      font-family:Arial; text-decoration:none; padding:0px">&times;</a>
-      <?php echo $errorMessage; ?>
-    </div>
-  <?php endif; ?>
-   <!-- error message ends -->
    
 
                   <form method="post" action="login" class="row g-3 needs-validation">

@@ -31,7 +31,7 @@ include('../functions.php');
     >
 
     <div class="pagetitle">
-      <h1>EQPT & INVENTORY</h1>
+      <h1 style="font-weight:normal;">EQPT & INVENTORY</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
@@ -161,7 +161,7 @@ include('../functions.php');
                     </div>
                     <div class="modal-body"
                        style="
-                background-image: url('../IMAGES/img1.jpg'); 
+                background-image: url('../IMAGES/img11.png'); 
                 background-size: cover;
                 background-position: center;
                 min-height: 100vh;
@@ -233,13 +233,13 @@ include('../functions.php');
               </div><!-- End Full Screen Modal-->
 
 
-            <!-- Extra Large Modal -->
-              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ExtralargeModal2">
+            <!-- Large Modal -->
+              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal20">
                 ADD NEW ITEM TO INVENTORY
               </button>
 
-              <div class="modal fade" id="ExtralargeModal2" tabindex="-1" style="border-radius:0px;">
-                <div class="modal-dialog modal-xl" style="border-radius:0px;">
+              <div class="modal fade" id="largeModal20" tabindex="-1" style="border-radius:0px;">
+                <div class="modal-dialog modal-lg" style="border-radius:0px;">
                   <div class="modal-content" style="border-radius:0px;">
                     <div class="modal-header" style="border-radius:0px;">
                       <h5 class="modal-title" style="border-radius:0px;">NEW ITEM FORM</h5>
@@ -258,16 +258,16 @@ include('../functions.php');
                    
                     <!-- Multi Columns Form -->
               <form method="post" action="unitAdminProcessEqptInventory" class="row g-3" style="padding-left:70px; padding-right:70px; padding-top:20px;">
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="item" class="form-label">ITEM:</label>
                   <input type="text" name="item" class="form-control" id="item" placeholder="Enter item" style="border-radius:2px;" required>
                 </div> 
-              <div class="col-md-3">
+              <div class="col-md-4">
                   <label for="type" class="form-label">ITEM TYPE:</label>
                   <select id="type" name="type" class="form-select" style="border-radius:2px;" required>
                         <option value="">..choose..</option>
                         <?php
-                        $itemTypeSQL = "SELECT * FROM item_type";
+                        $itemTypeSQL = "SELECT * FROM item_type WHERE UNIT_CODE = '$account'";
                         $itemTypeResult = mysqli_query($conn, $itemTypeSQL);
                         $totalRecords = mysqli_num_rows($itemTypeResult); 
                         while($itemTypeFetch=mysqli_fetch_assoc($itemTypeResult))
@@ -279,46 +279,46 @@ include('../functions.php');
                         ?>          
                   </select>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <label for="qty" class="form-label">QTY:</label>
                     <input type="text" name="qty" class="form-control" id="qty" placeholder="Enter qty" style="border-radius:2px;" required>
                 </div>
                
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="svc" class="form-label">SVC</label>
                   <input type="text" name="svc" class="form-control" id="svc" placeholder="number svc" style="border-radius:2px;" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="us" class="form-label">U/S:</label>
                   <input type="text" name="us" class="form-control" id="us" placeholder="number u/s" style="border-radius:2px;" required>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <label for="unit" class="form-label">UNIT:</label>
                    <select id="unit" name="unit" class="form-select" style="border-radius:2px;" required>
                         <option value="<?php echo $_SESSION['account'];?>"><?php echo $_SESSION['account'];?></option>
                   </select>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <label for="office" class="form-label">OFFICE</label>
                   <input type="text" name="office" class="form-control" id="office" placeholder="office" style="border-radius:2px;" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="model" class="form-label">MODEL</label>
                   <input type="text" name="model" class="form-control" id="model" placeholder="model" style="border-radius:2px;" required>
                 </div>
-                 <div class="col-md-3">
+                 <div class="col-md-4">
                   <label for="deployment" class="form-label">DEPLOYMENT</label>
                   <input type="text" name="deployment" class="form-control" id="deployment" placeholder="deployment" style="border-radius:2px;" required>
                 </div>
-                 <div class="col-md-3">
+                 <div class="col-md-4">
                   <label for="location" class="form-label">LOCATION</label>
                   <input type="text" name="location" class="form-control" id="location" placeholder="location" style="border-radius:2px;" required>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                   <label for="description" class="form-label">DESCRIPTION:</label>
                   <input type="text" name="description" class="form-control" id="description" placeholder="description" style="border-radius:2px;" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label for="remark" class="form-label">REMARK:</label>
                    <input type="text" name="remark" class="form-control" id="remark" placeholder="remark" style="border-radius:2px;" required>
                 </div>
@@ -333,7 +333,7 @@ include('../functions.php');
                    
                   </div>
                 </div>
-              </div><!-- End Extra Large Modal-->
+              </div><!-- End  Large Modal-->
 
 
               

@@ -46,7 +46,7 @@ $current_date = date('Y-m-d');
     >
 
     <div class="pagetitle">
-      <h1>LEAVE & PASSES</h1>
+      <h1 style="font-weight: normal;">LEAVE & PASSES</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="adminHome">Home</a></li>
@@ -334,13 +334,13 @@ $current_date = date('Y-m-d');
 
 
 
-              <!-- Extra Large Modal -->
-              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ExtralargeModal2">
+              <!-- Large Modal -->
+              <button type="button" style="border-radius:1px; margin-top:20px; margin-right:5px; padding:15px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal7">
                 ADD LEAVE / PASS TO DATABASE
               </button>
 
-              <div class="modal fade" id="ExtralargeModal2" tabindex="-1" style="border-radius:0px;">
-                <div class="modal-dialog modal-xl" style="border-radius:0px;">
+              <div class="modal fade" id="largeModal7" tabindex="-1" style="border-radius:0px;">
+                <div class="modal-dialog modal-lg" style="border-radius:0px;">
                   <div class="modal-content" style="border-radius:0px;">
                     <div class="modal-header" style="border-radius:0px;">
                       <h5 class="modal-title" style="border-radius:0px;">LEAVE/PASS FORM</h5>
@@ -421,7 +421,7 @@ $current_date = date('Y-m-d');
                    
                   </div>
                 </div>
-              </div><!-- End Extra Large Modal-->
+              </div><!-- End Large Modal-->
 
             </div>
           </div>

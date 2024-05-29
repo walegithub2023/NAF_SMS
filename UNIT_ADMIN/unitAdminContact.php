@@ -13,7 +13,7 @@
 >
 
     <div class="pagetitle">
-      <h1>Contact</h1>
+      <h1  style="font-weight:normal;">Contact</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="home">Home</a></li>

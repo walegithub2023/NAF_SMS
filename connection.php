@@ -3,7 +3,7 @@
 //Declare Connection Variables
 $servername = "localhost";
 $username = "root";
-$password = "wale@password";
+$password = "";
 $dbname = "nafsoms";
 
 //Create Connection to the Database
@@ -13,7 +13,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-
-
 ?>
 

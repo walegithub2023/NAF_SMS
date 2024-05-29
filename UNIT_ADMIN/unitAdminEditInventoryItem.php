@@ -27,7 +27,7 @@ include('../functions.php');
     "
 >
     <div class="pagetitle">
-      <h1>EDIT INVENTORY ITEM</h1>
+      <h1 style="font-weight: normal;">EDIT INVENTORY ITEM</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>

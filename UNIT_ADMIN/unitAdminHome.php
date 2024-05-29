@@ -17,10 +17,10 @@ style="
     "
 >
        <div class="pagetitle">
-      <h1>NAFSOMS</h1>
+      <h1 style="font-weight:normal;">NAFSOMS</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="adminHome">Home</a></li>
+          <li class="breadcrumb-item"><a href="unitAdminHome">Home</a></li>
           <li class="breadcrumb-item active">System</li>
         </ol>
       </nav>
@@ -33,7 +33,7 @@ style="
 
           <div class="card" style="padding:20px; padding-bottom:50px; border-radius:0px;">
             <div class="card-body">
-              <p id="" class="text-primary;" style="font-size:185%; color:rgb(1, 41, 112); text-align:center">NIGERIAN AIR FORCE SAFETY & OPERATIONS MANAGEMENT SYSTEM</p>
+              <p id="" class="text-primary;" style="font-size:185%; color:rgb(1, 41, 112); text-align:center; font-weight:normal;">NIGERIAN AIR FORCE SAFETY & OPERATIONS MANAGEMENT SYSTEM</p>
               <p style="text-align:justify;">
                     Lorem ipsum dolor sit amet consectetur adipiscing elit, quam torquent cubilia vulputate mattis tempor, velit 
                     tristique proin taciti a et.Vestibulum curae fermentum ligula per neque scelerisque ad, integer congue lacinia 
@@ -67,16 +67,18 @@ style="
                     </div>
                     <div class="modal-body"
                        style="
-                background-image: url('../IMAGES/img1.jpg'); 
-                background-size: cover;
-                background-position: center;
-                min-height: 100vh;
-                zIndex:-1;
-                "   
-                >
+                        padding-left:35px;
+                        padding-right:35px;
+                        background-image: url('../IMAGES/img11.png'); 
+                        background-size: cover;
+                        background-position: center;
+                        min-height: 100vh;
+                        zIndex:-1;
+                    "   
+                    >
                    <!--  modal body goes here -->
                    <!-- Table with stripped rows -->
-            <div class="table-responsive" style="">
+            <!-- <div class="table-responsive" style="">
               <table class="table datatable table-striped second table-hover" style="text-transform:; font-size:90%; background-color:white;">
                 <thead>
                   <tr>
@@ -128,7 +130,7 @@ style="
                     </tr>
                 </tbody>
               </table>
-        </div>
+        </div> -->
               <!-- End Table with stripped rows -->
                     </div>
                     <div class="modal-footer">
