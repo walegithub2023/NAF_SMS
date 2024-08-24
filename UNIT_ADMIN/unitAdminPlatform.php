@@ -132,7 +132,7 @@ include('../functions.php');
                     <th scope="col">Unit</th>
                     <th scope="col">Status</th>
                     <th scope="col">Remark</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">D</th>
                   </tr>
                 </thead>
                 <tbody>

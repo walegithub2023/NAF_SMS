@@ -11,7 +11,7 @@ $account = $_SESSION['account'];
 
    
 //get offrs' str in the unit at the time of collecting today's pde ste
-$offrsStr = "SELECT * FROM pers WHERE (PERS_TYPE = 'OFFR(MALE)' OR PERS_TYPE='OFFR(FEMALE)') AND UNIT = '$account'";
+$offrsStr = "SELECT * FROM pers WHERE ((PERS_TYPE = 'OFFR(MALE)' OR PERS_TYPE = 'OFFR(FEMALE)') AND UNIT = '$account')";
 $offrsStrResult = mysqli_query($conn, $offrsStr);
 $totalOffrsStrResult = mysqli_num_rows($offrsStrResult); 
 

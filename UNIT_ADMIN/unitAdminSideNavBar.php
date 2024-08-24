@@ -31,7 +31,22 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
           </li>
           <li>
             <a href="">
-              <i class="bi bi-circle"></i><span>...</span>
+              <i class="bi bi-circle"></i><span>Safety Policy</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Safety Risk Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Safety Assurance</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Safety Promotion</span>
             </a>
           </li>
         </ul>
@@ -53,7 +68,7 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
               <i class="bi bi-circle"></i><span>Platform</span>
             </a>
           </li>
-          <li>
+         <!--  <li>
             <a href="unitAdminAcDailyFgActivity">
               <i class="bi bi-circle"></i><span>AcDailyFgActy</span>
             </a>
@@ -72,7 +87,7 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
             <a href="unitAdminAcDescWorkRecord">
               <i class="bi bi-circle"></i><span>AcWorkRpt</span>
             </a>
-          </li>
+          </li> -->
            <li>
             <a href="unitAdminEqptInventory">
               <i class="bi bi-circle"></i><span>Inventory</span>
@@ -103,7 +118,7 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
 
 
 
-           <li class="nav-item">
+          <!--  <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -124,7 +139,7 @@ if(isset($_SESSION['svcNo']) && isset($_SESSION['password']) && $_SESSION['userR
             </a>
           </li>
         </ul>
-      </li><!-- End Charts Nav -->
+      </li> --><!-- End Charts Nav -->
 
       
      
